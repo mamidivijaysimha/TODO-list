@@ -7,9 +7,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect('mongodb+srv://vijayvijju8412:RCDcWlWGRh8vlKFW@cluster0.rc1mnpl.mongodb.net/TODO',
-    console.log('MongoDB connected')
-)
+  mongoose.connect('mongodb+srv://vijayvijju8412:RCDcWlWGRh8vlKFW@cluster0.rc1mnpl.mongodb.net/TODO',{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    ssl: true,
+    tlsAllowInvalidCertificates: false,
+  })
 
 
 app.listen(5000,
